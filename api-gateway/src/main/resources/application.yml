@@ -1,0 +1,40 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          api-gateway-service:
+            issuer-uri: ${ISSUER_URI}
+        registration:
+          api-gateway-service:
+            provider: api-gateway-service
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: ${REDIRECT_URI}
+            scope: openid
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: users-service
+          uri: ${USERS_SERVICE_URI}
+          predicates:
+            - Path=/users/**
+          filters:
+            - StripPrefix=0
+        - id: projects-service
+          uri: ${PROJECTS_SERVICE_URI}
+          predicates:
+            - Path=/projects/**
+          filters:
+            - StripPrefix=0
+        - id: payments-service
+          uri: ${PAYMENTS_SERVICE_URI}
+          predicates:
+            - Path=/payments/**
+          filters:
+            - StripPrefix=0
+server:
+  port: ${SERVER_PORT}
