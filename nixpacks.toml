@@ -1,20 +1,6 @@
 [[services]]
-name = "api-gateway"
-path = "api-gateway/"
+name = "ibiradopta-multi-module"
+path = "./"
 build = "mvn clean install"
-start = "java -jar target/api-gateway.jar"
-environment = { JAVA_VERSION = "17" }
-
-[[services]]
-name = "project-service"
-path = "project-service/"
-build = "mvn clean install"
-start = "java -jar target/project-service.jar"
-environment = { JAVA_VERSION = "17" }
-
-[[services]]
-name = "users-service"
-path = "users-service/"
-build = "mvn clean install"
-start = "java -jar target/users-service.jar"
+start = "java -jar api-gateway/target/api-gateway.jar"
 environment = { JAVA_VERSION = "17" }
