@@ -1,0 +1,17 @@
+[[services]]
+name = "api-gateway"
+path = "api-gateway/"
+build = "mvn clean install"
+start = "java -jar target/api-gateway.jar"
+
+[[services]]
+name = "project-service"
+path = "project-service/"
+build = "mvn clean install"
+start = "java -jar target/project-service.jar"
+
+[[services]]
+name = "users-service"
+path = "users-service/"
+build = "mvn clean install"
+start = "java -jar target/users-service.jar"
