@@ -1,0 +1,26 @@
+server:
+    port: ${USERS_SERVICE_PORT}
+spring:
+    application:
+        name: ibiradoptaUserService
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: ${OAUTH2_ISSUER_URI}
+
+ibiradopta:
+    keycloak:
+        serverUrl: ${KEYCLOAK_SERVER_URL}
+        realm: ${KEYCLOAK_REALM}
+        clientId: ${KEYCLOAK_CLIENT_ID}
+        clientSecret: ${KEYCLOAK_CLIENT_SECRET}
+
+springdoc:
+    api-docs:
+        path: /users/v3/api-docs
+    swagger-ui:
+        path: /users/swagger-ui.html
+        oauth:
+            clientId: ${SWAGGER_LOGIN_CLIENT_ID}
+#        redirectUrl: http://localhost:9090/webjars/swagger-ui/index.html
