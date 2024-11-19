@@ -1,0 +1,9 @@
+{
+    "build": {
+      "context": "users-service"
+    },
+    "deploy": {
+      "command": "java -jar build/libs/users-service.jar"
+    }
+  }
+  

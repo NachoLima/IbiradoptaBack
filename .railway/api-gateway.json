@@ -1,0 +1,9 @@
+{
+    "build": {
+      "context": "api-gateway"
+    },
+    "deploy": {
+      "command": "java -jar build/libs/api-gateway.jar"
+    }
+  }
+  

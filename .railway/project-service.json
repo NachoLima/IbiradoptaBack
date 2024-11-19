@@ -1,0 +1,9 @@
+{
+    "build": {
+      "context": "project-service"
+    },
+    "deploy": {
+      "command": "java -jar build/libs/project-service.jar"
+    }
+  }
+  
